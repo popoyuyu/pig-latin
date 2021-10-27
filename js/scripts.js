@@ -35,7 +35,6 @@ function ifQ(word) {
   letters.shift();
   letters.push('a', 'y');
   word = letters.join('');
-  console.log(word);
 }
 
 function ifVowel(sentence) {
@@ -43,16 +42,22 @@ function ifVowel(sentence) {
   words.forEach(function (word) {
     if (findVowel(word) === 1) {
       word = word.concat("way");
-      console.log(word);
     }
     else if (findVowel(word) === 2) {
       word = ifQ(word);
     }
     else {
       word = isConsonant(word);
-      console.log(word);
     }
   });
 }
 
-ifVowel("hello hi this is quiz");
+$(document).ready(function () {
+  $("form#entryForm").submit(function (event) {
+    event.preventDefault();
+    let ttt = $("#line").val()
+    ttt = ifVowel(ttt);
+    $(".results").text(ttt);
+    console.log(ttt);
+  });
+});
