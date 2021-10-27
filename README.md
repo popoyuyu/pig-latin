@@ -1,10 +1,8 @@
-Describe: pigLatin()
+Describe: findVowel()
 
-Test: "It will detect words that begin with a vowel."
-Code: pigLatin("a");
+Test: "hello this is a test"
+Code: findVowel("a, e, i, o, u");
 Expected Output: "yes"
-
-Describe: pigLatin()
 
 Test: "It will add 'way' to the end of words that begin with a vowel."
 Code: pigLatin("a");
